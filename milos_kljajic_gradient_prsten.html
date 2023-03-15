@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gradient Prsten</title>
+    <style>
+        body {
+    padding: 0;
+    margin: 0;
+    background: #050210;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+.ring-out {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.ring {
+    width: 200px;
+    height: 200px;
+    background: #050210;
+    position: relative;
+    border-radius: 50%;
+}
+.ring:before,.ring:after {
+    content: "ring";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+    z-index: -1;
+    animation: animate 1s linear infinite;
+}
+.ring:after {
+  filter: blur(10px);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="ring-out">
+    <div class="ring"></div>
+    </div>
+  </body>
+</html>
